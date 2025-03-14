@@ -14,7 +14,7 @@ SECRET_KEY = "django-insecure-%2jsq*p6e11ms&4ghp)ljv93l4ykhj&$o!^kn=#nkwsondltgz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app", ".now.sh","mahmudunnobi.vercel.app","127.0.0.1", "*"]
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 # Application definition
@@ -70,12 +70,8 @@ WSGI_APPLICATION = "portfolio.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'koyebdb',
-        'USER': 'koyeb-adm',
-        'PASSWORD': 'npg_WIBb0F8rlVfQ',
-        'HOST': 'ep-royal-forest-a2onxu86.eu-central-1.pg.koyeb.app',
-        'OPTIONS': {'sslmode': 'require'},
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 # Password validation
@@ -123,3 +119,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# AUTHENTICATION_BACKENDS = [
+#     'django.contrib.auth_backend.EmailBackend',
+#     'django.contrib.auth.backends.ModelBackend',
+# ]
+
+# IMAGEKIT_CACHEFILE_DIR="cache"
