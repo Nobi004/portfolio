@@ -1,0 +1,398 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmudun Nobi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{%static 'style/style.css' %}">
+    <link rel="stylesheet" href="{%static 'style/responsive.css' %}">
+</head>
+
+<body>
+    <a href="#headersection" class="icons-top">
+       
+            <i class="fa-solid fa-arrow-up"></i>
+     
+    </a>
+    <main >
+
+        <div class="myresumebox" id="myresumebox">
+            <div class="buttonswork">
+                <a href="{{about.resume.url}}" download="">
+                    <button>Download my Resume</button>
+                </a>
+
+                <button class="closepfd"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <iframe width="750px" height="770px" id="myresumeid" src="{{about.resume.url}}" frameborder="0"></iframe>
+         
+        </div>
+    
+        <header id="headersection">
+            <div class="logo">
+                <h1>Mahmudun Nobi</h1>
+            </div>
+            <!-- filepath: d:\django projects\Portfolio1\portfolio\templates\index.html -->
+            <nav class="nav">
+                <i class="fa-solid fa-arrow-right close-navbar"></i>
+                <ul class="nav-menu">
+                    <li class="nav-list">
+                        <a href="#aboutsection" class="nav-link">about</a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#educationsection" class="nav-link">education</a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#experiencesection" class="nav-link">experience</a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#myprojects" class="nav-link">projects</a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#skillsection" class="nav-link">myskills</a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#servicesection" class="nav-link">services</a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#contactsection" class="nav-link">contacts</a>
+                    </li>
+                </ul>
+                <div class="dark-light-mode nav-dark-light-mode">
+                    <i class="fa-regular fa-moon lightmodes"></i>
+                    <i class="fa-regular fa-sun darkmodes"></i>
+                </div>
+            </nav>
+            <div class="signup-btn">
+                <!-- <button>signup</button> -->
+                <div class="hamburger">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+                <div class="dark-light-mode">
+                    <i class="fa-regular fa-moon lightmodes big-screen"></i>
+                    <i class="fa-regular fa-sun darkmodes big-screen"></i>
+                </div>
+            </div>
+        </header>
+        <section class="hero-section" id="herosection">
+            <div class="left">
+                <div class="left-text">
+                    <h2>let's work <br> together to create wonders with us</h2>
+                </div>
+                <div class="boxesss">
+                    <div class="left-para">
+                        <p> A visionary creatice, building captivationg wonders via aret and design .
+                        Adept at translating imagination into astounding reality</p>
+                    </div>
+
+                    <div class="btn-box">
+                        <button id="letstalk">let's talk</button>
+                        <button id="myresumeopen">my Resume</button>
+                    </div>
+                    {% for about in about %}
+                    <div class="total-static">
+                        <div class="t-st">
+                            <h3>{{about.experience}}</h3>
+                            <p>years experience</p>
+                        </div>
+                        <div class="t-st">
+                            <h3>{{about.project_success}}</h3>
+                            <p>project success</p>
+                        </div>
+                        <div class="t-st">
+                            <h3>{{about.rate}}</h3>
+                            <p>Satisfied Rate</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="right">
+                {% for post in about %}
+                <div class="image-box">
+                    <div class="bordered"></div>
+                    
+                    <img src="{{post.image.url}}" alt="">
+                    <div class="bordered"></div>
+                </div>
+                {% endfor %}
+                {% comment %} <div class="extra-box">
+                    <div class="bordered"></div>
+                    <div class="bordered"></div>
+                </div> {% endcomment %}
+                <div class="dessss">
+                    <div class="dis-skill">
+                        <i class="fa-solid fa-globe"></i>
+                        <p>Django Developer</p>
+                    </div>
+                    <div class="dis-skill">
+                        <i class="fa-solid fa-mobile"></i>
+                        <p>Computer Vision</p>
+                    </div>
+                    <div class="dis-skill">
+                        <i class="fa-solid fa-pen-nib"></i>
+                        <p>AI Engineer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- filepath: d:\django projects\Portfolio1\portfolio\templates\index.html -->
+        <section class="about-section" id="aboutsection" >
+            <h2 class="title_text">About us</h2>
+            <div class="st-container">
+                <div class="about-left">
+                    <div class="about-links">
+                        <div class="about-btn">
+                            {% for post in link %}
+                            <a href="{{ post.link }}" target="_blank">
+                                <button><img src="{{ post.icon.url }}" alt="{{ post.name }}"> <span>{{ post.name }}</span></button>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        {% for post in about %}
+                        <img src="{{ post.image.url }}" alt="{{ post.name }}">
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="about-right">
+                    {% for post in about %}
+                    <h2>I'm <span>{{ post.name }}</span>, a <span class="sm">{{ post.position }}</span></h2>
+                    <p>{{ post.description }}</p>
+                    {% comment %} <img src="{{ post.image.url }}" alt="{{ post.name }}"> {% endcomment %}
+                    <button class="about-more-btn">About More</button>
+                    {% endfor %}
+                </div>
+                <div class="email-show">
+                    <div class="line"></div>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mdmnb435@gmail.com" target="_blank">
+                        <p>mdmnb435@gmail.com</p>
+                    </a>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </section>
+        <!-- filepath: d:\django projects\Portfolio1\portfolio\templates\index.html -->
+        <section class="education-section" id="educationsection">
+            <h2 class="title_text">my education</h2>
+            <div class="education-container">
+                {% for post in education %}
+                <div class="ed-box">
+                    <div class="ed-image">
+                        <img src="{{ post.image.url }}" alt="School Image">
+                    </div>
+                    <div class="ed-content">
+                        <div class="name-ed">{{ post.Academy_name }}</div>
+                        <div class="date-ed">{{ post.year_of_completion }}</div>
+                        <div class="institution-ed">{{ post.degree }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <!-- filepath: d:\django projects\Portfolio1\portfolio\templates\index.html -->
+        <section class="skills-sections" id="skillsection">
+            <h2 class="title_text">My Skills</h2>
+            <div class="sk-container">
+                <div class="left-sk">
+                    {% for post in skills|slice:":12" %}
+                    <div class="sk-box">
+                        <div class="skill-box">
+                            <div class="skill-logo">
+                                <img src="{{ post.icon.url }}" alt="">
+                            </div>
+                            <div class="sk-name">
+                                {{ post.name }}
+                            </div>
+                            <div class="dashed-box">
+                                <div class="dashed"></div>
+                                <div class="dashed"></div>
+                                <div class="dashed"></div>
+                                <div class="dashed"></div>
+                                <div class="dashed"></div>
+                                <div class="circarshape"></div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="center-sk">
+                    <!-- <img src="images/skills.png" alt=""> -->
+                </div>
+                <div class="right-sk">
+                    {% for post in skills|slice:"12:24" %}
+                    <div class="sk-box">
+                        <div class="skill-box">
+                            <div class="skill-logo">
+                                <img src="{{ post.icon.url }}" alt="">
+                            </div>
+                            <div class="sk-name">
+                                {{ post.name }}
+                            </div>
+                            <div class="dashed-box">
+                                <div class="dashed"></div>
+                                <div class="dashed"></div>
+                                <div class="dashed"></div>
+                                <div class="dashed"></div>
+                                <div class="dashed"></div>
+                                <div class="circarshape"></div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- filepath: d:\django projects\Portfolio1\portfolio\templates\index.html -->
+        <section class="experience-section" id="experiencesection">
+            <h2 class="title_text">Experience</h2>
+            <div class="experience-container">
+                {% for post in experience %}
+                <div class="exp-box">
+                    <div class="circle-dot"></div>
+                    <div class="date">{{ post.start_date }} - {{ post.end_date }}</div>
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.content }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+                <!-- filepath: d:\django projects\Portfolio1\portfolio\templates\index.html -->
+        <section class="myprojects" id="myprojects">
+            <h2 class="title_text">my projects</h2>
+            <div class="myprojects-container">
+                <div class="mypro-oneline">
+                    {% for post in projects %}
+                    <div class="mypro-box">
+                        <div class="overlay"></div>
+                        <div class="overlay-2">
+                            <a href="{{ post.source_code }}">
+                                <div class="source-code ov2">
+                                    <i class="fa-solid fa-download"></i>
+                                    <p>Source Code</p>
+                                </div>
+                            </a>
+                            <a href="{{ post.view_project }}">
+                                <div class="viewproject ov2">
+                                    <i class="fa-solid fa-eye"></i>
+                                    <p>View Project</p>
+                                </div>
+                            </a>
+                            <a href="{{ post.video }}">
+                                <div class="video-link ov2">
+                                    <i class="fa-solid fa-video"></i>
+                                    <p>Video</p>
+                                </div>
+                            </a>
+                        </div>
+                        <img src="{{ post.image.url }}" alt="{{ post.name }}">
+                        <div class="info">
+                            <h3 class="pro-name">{{ post.name }}</h3>
+                            <div class="view-icon">
+                                <i class="fa-solid fa-arrow-right"></i>
+                                <p>view</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- filepath: d:\django projects\Portfolio1\portfolio\templates\index.html -->
+        <section class="service-section" id="servicesection">
+            <h2 class="title_text">my service <i class="fa-solid fa-greater-than"></i><i class="fa-solid fa-greater-than"></i></h2>
+            <div class="service-container">
+                {% for post in service %}
+                <div class="service-box">
+                    {% comment %} <div class="ser-img-box">
+                        <img src="{{ post.image.url }}" alt="{{ post.name }}">
+                    </div> {% endcomment %}
+                    <div class="ser-left">
+                        <h3>{{ post.name }}</h3>
+                        <h3>{{ post.name }}</h3>
+                    </div>
+                    <div class="ser-right">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- filepath: d:\django projects\Portfolio1\portfolio\templates\index.html -->
+        <section class="contatus-section" id="contactsection">
+            <div class="contacts-container">
+                <div class="contactus-link">
+                    <a href="https://github.com/Nobi004" target="_blank"><button> <i class="fa-brands fa-github"></i> <span>GitHub</span></button></a>
+                    <a href="https://www.instagram.com/mahmudunnobi04" target="_blank"><button><i class="fa-brands fa-instagram"></i> <span>Instagram</span></button></a>
+                    <a href="https://www.facebook.com/mahmudunnobi04" target="_blank"><button><i class="fa-brands fa-facebook"></i> <span>Facebook</span></button></a>
+                    <a href="https://www.youtube.com/@md.mahmudunnobi1880" target="_blank"><button><i class="fa-brands fa-youtube"></i> <span>YouTube</span></button></a>
+                    <a href="https://www.linkedin.com/in/nobi04" target="_blank"><button><i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span></button></a>
+                    <a href="https://wa.me/01590045859" target="_blank"><button><i class="fa-brands fa-whatsapp"></i> <span>WhatsAPP</span></button></a>
+                </div>
+                <div class="contact-form-container">
+                    <h2 class="title_text">contact us</h2>
+                    <form action="{% url 'contact' %}" method="post">
+                        {% csrf_token %}
+                        <div class="input-box">
+                            <label for="name">Name</label>
+                            <input type="text" name='name' placeholder="enter your name">
+                        </div>
+                        <div class="input-box">
+                            <label for="email">email</label>
+                            <input type="email" name='email' placeholder="enter your email">
+                        </div>
+                        <div class="input-box">
+                            <label for="message">message</label>
+                            <textarea name="message" id="" placeholder="enter your message"></textarea>
+                        </div>
+                        <div class="input-box">
+                            <button>submit</button>
+                        </div>
+                    </form>
+                </div>
+                {% comment %} <div class="contact-us-image-box">
+                    <img src="#" alt="">
+                </div> {% endcomment %}
+            </div>
+        </section>
+        <!-- filepath: d:\django projects\Portfolio1\portfolio\templates\index.html -->
+        <footer class="footer-section">
+            <p>&copy; all right reserved by Mahmudun Nobi</p>
+        </footer>
+
+
+
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script> 
+    <script src="{%static 'js/animationgap.js' %}"></script>
+    <script src="{%static 'js/script.js' %}"></script>
+    <script src="{%static 'js/smoothscroll.js' %}"></script>
+    {% if settings.DEBUG %}
+    <script src="http://localhost:8000/__reload__/reload.js"></script>
+    {% endif %}
+</body>
+
+</html>
